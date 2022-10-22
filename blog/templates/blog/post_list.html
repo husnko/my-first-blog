@@ -8,16 +8,13 @@
             <h1><a href="/">Husnoro's first blog</a></h1>
         </header>
 
-        <article>
-            <time>published: 24.10.2022, 12:45</time>
-            <h2><a href="">Here is important thing</a></h2>
-            <p>как только закончите с джанго герлзовским туториалом</p>
-        </article>
+        {% for post in posts %}
+            <article>
+                <time>published: {{ post.published_date }}</time>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </article>
+        {% endfor %}
 
-        <article>
-            <time>published: 24.10.2022, 12:45</time>
-            <h2><a href="">Another important thing</a></h2>
-            <p>самое главное не забывать выделять в день время для кодинга.</p>
-        </article>
     </body>
 </html>
